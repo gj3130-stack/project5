@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sabana | Digital Ecosystem Builder</title>
+  <title>BIT:DAM STUDIO 빛담 스튜디오 | AI 영상 · 웹 제작</title>
+  <meta name="description" content="BIT:DAM STUDIO(빛담 스튜디오) — AI로 빛을 담는 영상·웹 스튜디오. AI 광고 영상, 홍보·유튜브 영상, 숏폼, 웹사이트 제작." />
+  <link rel="canonical" href="https://bitdam.begeum500.co.kr/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BIT:DAM STUDIO" />
+  <meta property="og:title" content="BIT:DAM STUDIO 빛담 스튜디오 | AI 영상 · 웹 제작" />
+  <meta property="og:description" content="AI로 빛을 담는 영상·웹 스튜디오. AI 광고 영상 · 홍보/유튜브 영상 · 숏폼 · 웹사이트 제작." />
+  <meta property="og:url" content="https://bitdam.begeum500.co.kr/" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta name="theme-color" content="#070B12" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23070B12%22/%3E%3Ctext x=%2216%22 y=%2223%22 font-size=%2220%22 font-family=%22Arial%22 font-weight=%22900%22 text-anchor=%22middle%22 fill=%22%23E5A93C%22%3EB%3C/text%3E%3C/svg%3E" />
   
   <!-- Pretendard & Inter & Montserrat Display Fonts -->
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
@@ -24,7 +34,7 @@
             serif: ['Playfair Display', 'serif'],
           },
           colors: {
-            sabana: {
+            brand: {
               gold: '#E5A93C',
               'gold-light': '#FDE047',
               'gold-dark': '#B45309',
@@ -244,720 +254,625 @@
     .social-btn:hover {
       transform: translateY(-4px) scale(1.08);
     }
+    /* ===== Portfolio additions ===== */
+    .work-media { position: relative; overflow: hidden; background: #0B1220; aspect-ratio: 16 / 10; }
+    .work-media .media-bg { position: absolute; inset: -10%; width: 120%; height: 120%; object-fit: cover; filter: blur(22px) brightness(.45); }
+    .work-media .media-frame { position: absolute; inset: 0; }
+    .work-media.portrait .media-frame { left: 50%; right: auto; width: auto; height: 100%; aspect-ratio: 9 / 16; transform: translateX(-50%); }
+    .work-media .media-frame img, .work-media .media-frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .work-media video { opacity: 0; transition: opacity .35s ease; }
+    .work-card.is-previewing .work-media video { opacity: 1; }
+    .work-card { transition: transform .3s ease, border-color .3s ease; }
+    .work-card:hover { transform: translateY(-3px); }
+    .filter-btn.active { background: #E5A93C; color: #0f172a; border-color: #E5A93C; }
+    /* 입력이 필요한 자리표시 텍스트 */
+    .todo { display: inline-flex; align-items: center; gap: .35rem; padding: .15rem .55rem; border: 1px dashed rgba(229,169,60,.7); border-radius: .5rem; color: #B45309; background: rgba(229,169,60,.08); font-size: .75rem; font-weight: 600; }
+    .dark .todo { color: #FCD34D; }
+    .todo.subtle { border-color: rgba(148,163,184,.45); color: #94a3b8; background: transparent; font-weight: 500; }
+    .play-badge { transition: opacity .3s ease; }
+    .work-card.is-previewing .play-badge { opacity: 0; }
+    /* ===== Studio additions ===== */
+    .wordmark { font-family: 'Montserrat', 'Pretendard', sans-serif; font-weight: 900; letter-spacing: -0.02em; }
+    .wordmark .colon { color: #E5A93C; }
+    .hero-ko { font-family: 'Pretendard', 'Montserrat', sans-serif; letter-spacing: -0.04em; text-transform: none; line-height: 1.18; }
+    .field { width: 100%; border-radius: .9rem; padding: .8rem 1rem; font-size: .9rem; background: rgba(255,255,255,.9); border: 1px solid #e2e8f0; color: #0f172a; outline: none; transition: border-color .2s, box-shadow .2s; }
+    .dark .field { background: rgba(15,23,42,.75); border-color: #1E293B; color: #e2e8f0; }
+    .field:focus { border-color: #E5A93C; box-shadow: 0 0 0 3px rgba(229,169,60,.18); }
+    .field::placeholder { color: #94a3b8; }
+    .field.invalid { border-color: #f43f5e; }
+    select.field { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%2394a3b8' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .9rem center; padding-right: 2.5rem; }
   </style>
 </head>
 
-<body class="bg-slate-50 text-slate-800 dark:bg-dark-bg dark:text-slate-200 transition-colors duration-300 font-sans selection:bg-sabana-gold selection:text-slate-900 antialiased relative overflow-x-hidden min-h-screen flex flex-col justify-between">
+<body class="bg-slate-50 text-slate-800 dark:bg-dark-bg dark:text-slate-200 transition-colors duration-300 font-sans selection:bg-brand-gold selection:text-slate-900 antialiased relative overflow-x-hidden min-h-screen flex flex-col justify-between">
 
-  <!-- Background Floating Parallax Glowing Orbs -->
   <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
     <div id="orb-1" class="parallax-orb w-96 h-96 top-[15%] -left-20 bg-amber-400/15 dark:bg-amber-500/10"></div>
     <div id="orb-2" class="parallax-orb w-[30rem] h-[30rem] top-[45%] -right-32 bg-emerald-400/15 dark:bg-emerald-500/10"></div>
     <div id="orb-3" class="parallax-orb w-96 h-96 top-[75%] left-[20%] bg-teal-400/15 dark:bg-teal-500/10"></div>
   </div>
 
-  <!-- Right Floating Page Section Indicator (Dots) -->
+  <!-- 섹션 인디케이터 -->
   <aside class="fixed right-5 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col items-center gap-3 p-2 rounded-full bg-white/40 dark:bg-dark-surface/50 backdrop-blur-md border border-slate-200/60 dark:border-dark-border/60">
-    <a href="#home" data-target="home" class="section-dot w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-sabana-gold active" title="Home"></a>
-    <a href="#profile" data-target="profile" class="section-dot w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-sabana-gold" title="Profile"></a>
-    <a href="#journey" data-target="journey" class="section-dot w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-sabana-gold" title="Journey"></a>
-    <a href="#portfolio" data-target="portfolio" class="section-dot w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-sabana-gold" title="Portfolio"></a>
-    <a href="#contact" data-target="contact" class="section-dot w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-sabana-gold" title="Contact"></a>
+    <a href="#home" data-target="home" class="section-dot w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-brand-gold active" title="홈"></a>
+    <a href="#services" data-target="services" class="section-dot w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-brand-gold" title="서비스"></a>
+    <a href="#works" data-target="works" class="section-dot w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-brand-gold" title="작업"></a>
+    <a href="#process" data-target="process" class="section-dot w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-brand-gold" title="프로세스"></a>
+    <a href="#contact" data-target="contact" class="section-dot w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-brand-gold" title="문의"></a>
   </aside>
 
-  <!-- Toast Notification -->
-  <div id="toast" class="fixed bottom-20 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900/95 dark:bg-slate-100/95 text-white dark:text-slate-900 px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-2.5 text-sm font-medium backdrop-blur-lg border border-slate-700/30 dark:border-slate-200">
-    <i data-lucide="check-circle-2" class="w-4 h-4 text-sabana-gold dark:text-sabana-emerald-dark"></i>
+  <div id="toast" class="fixed bottom-20 right-6 z-[60] transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900/95 dark:bg-slate-100/95 text-white dark:text-slate-900 px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-2.5 text-sm font-medium backdrop-blur-lg border border-slate-700/30 dark:border-slate-200">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-gold dark:text-brand-emerald-dark"></i>
     <span id="toast-message">이메일 주소가 복사되었습니다!</span>
   </div>
 
-  <!-- Back to TOP Button (Fixed Bottom-Right) -->
-  <button
-    id="back-to-top-btn"
-    aria-label="Back to Top"
-    class="fixed bottom-6 right-6 z-40 opacity-0 translate-y-6 pointer-events-none scale-90 w-12 h-12 rounded-2xl bg-white/85 dark:bg-dark-card/90 text-slate-800 dark:text-slate-200 border border-slate-200/90 dark:border-dark-border shadow-xl hover:shadow-2xl hover:border-sabana-gold dark:hover:border-sabana-gold hover:text-sabana-gold dark:hover:text-sabana-gold flex flex-col items-center justify-center gap-0.5 glass-nav group hover:-translate-y-1 focus:outline-none"
-  >
+  <button id="back-to-top-btn" aria-label="맨 위로" class="fixed bottom-6 right-6 z-40 opacity-0 translate-y-6 pointer-events-none scale-90 w-12 h-12 rounded-2xl bg-white/85 dark:bg-dark-card/90 text-slate-800 dark:text-slate-200 border border-slate-200/90 dark:border-dark-border shadow-xl hover:shadow-2xl hover:border-brand-gold hover:text-brand-gold flex flex-col items-center justify-center gap-0.5 glass-nav group hover:-translate-y-1 focus:outline-none">
     <i data-lucide="arrow-up" class="w-5 h-5 transition-transform group-hover:-translate-y-0.5"></i>
-    <span class="text-[9px] font-extrabold tracking-tighter uppercase leading-none text-slate-500 group-hover:text-sabana-gold">TOP</span>
+    <span class="text-[9px] font-extrabold tracking-tighter uppercase leading-none text-slate-500 group-hover:text-brand-gold">TOP</span>
   </button>
 
-  <!-- Header / Navigation -->
+  <!-- 헤더 -->
   <header class="sticky top-0 z-40 w-full border-b border-slate-200/70 dark:border-dark-border/80 bg-white/75 dark:bg-dark-bg/80 glass-nav transition-colors duration-300">
     <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
-      
-      <!-- Brand Logo -->
-      <a href="#home" class="flex items-center gap-3 group">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-sabana-emerald to-sabana-gold flex items-center justify-center text-slate-950 font-black text-lg shadow-sm shadow-sabana-gold/20 group-hover:scale-105 group-hover:rotate-3 transition-transform duration-300">
-          S
-        </div>
-        <div class="flex flex-col">
-          <span class="font-black text-lg tracking-tight text-slate-900 dark:text-white group-hover:text-sabana-gold transition-colors">
-            Sabana
-          </span>
-          <span class="text-[9px] tracking-wider text-slate-500 dark:text-slate-400 uppercase -mt-1 font-semibold">
-            Ecosystem
-          </span>
-        </div>
+      <a href="#home" class="flex items-baseline gap-1.5 group" aria-label="BIT:DAM STUDIO 홈">
+        <span class="wordmark text-xl sm:text-[1.35rem] text-slate-900 dark:text-white group-hover:text-brand-gold transition-colors">BIT<span class="colon">:</span>DAM</span>
+        <span class="text-[9px] sm:text-[10px] font-bold tracking-[0.3em] text-slate-500 dark:text-slate-400 uppercase">Studio</span>
       </a>
-
-      <!-- Desktop Nav Menu -->
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
-        <a href="#home" class="hover:text-sabana-gold dark:hover:text-sabana-gold transition-colors">Home</a>
-        <a href="#profile" class="hover:text-sabana-gold dark:hover:text-sabana-gold transition-colors">Profile</a>
-        <a href="#journey" class="hover:text-sabana-gold dark:hover:text-sabana-gold transition-colors">Journey</a>
-        <a href="#portfolio" class="hover:text-sabana-gold dark:hover:text-sabana-gold transition-colors">Portfolio</a>
-        <a href="#contact" class="hover:text-sabana-gold dark:hover:text-sabana-gold transition-colors">Contact</a>
+        <a href="#home" class="hover:text-brand-gold transition-colors">홈</a>
+        <a href="#services" class="hover:text-brand-gold transition-colors">서비스</a>
+        <a href="#works" class="hover:text-brand-gold transition-colors">작업</a>
+        <a href="#process" class="hover:text-brand-gold transition-colors">프로세스</a>
+        <a href="#contact" class="hover:text-brand-gold transition-colors">문의</a>
       </nav>
-
-      <!-- Right Actions: Theme Toggle & Mobile Menu -->
       <div class="flex items-center gap-3">
-        <!-- Theme Toggle -->
-        <button
-          id="theme-toggle"
-          aria-label="Toggle Theme"
-          class="w-10 h-10 rounded-xl border border-slate-200 dark:border-dark-border bg-white dark:bg-dark-card flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-sabana-gold dark:hover:text-sabana-gold hover:border-sabana-gold/50 transition-all hover:scale-105 focus:outline-none"
-        >
+        <button id="theme-toggle" aria-label="테마 전환" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-dark-border bg-white dark:bg-dark-card flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-brand-gold hover:border-brand-gold/50 transition-all hover:scale-105 focus:outline-none">
           <i id="theme-icon" data-lucide="moon" class="w-4 h-4 transition-transform duration-300"></i>
         </button>
-
-        <!-- Mobile Menu Toggle Button -->
-        <button
-          id="mobile-menu-btn"
-          aria-label="Toggle Navigation Menu"
-          class="md:hidden w-10 h-10 rounded-xl border border-slate-200 dark:border-dark-border bg-white dark:bg-dark-card flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none"
-        >
+        <button id="mobile-menu-btn" aria-label="메뉴 열기" class="md:hidden w-10 h-10 rounded-xl border border-slate-200 dark:border-dark-border bg-white dark:bg-dark-card flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none">
           <i id="menu-icon" data-lucide="menu" class="w-5 h-5"></i>
         </button>
       </div>
     </div>
-
-    <!-- Mobile Dropdown Navigation -->
     <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-dark-border bg-white/95 dark:bg-dark-bg/95 glass-nav px-6 py-5 space-y-4 text-base font-medium">
-      <a href="#home" class="mobile-nav-link block text-slate-700 dark:text-slate-300 hover:text-sabana-gold">Home</a>
-      <a href="#profile" class="mobile-nav-link block text-slate-700 dark:text-slate-300 hover:text-sabana-gold">Profile</a>
-      <a href="#journey" class="mobile-nav-link block text-slate-700 dark:text-slate-300 hover:text-sabana-gold">Journey</a>
-      <a href="#portfolio" class="mobile-nav-link block text-slate-700 dark:text-slate-300 hover:text-sabana-gold">Portfolio</a>
-      <a href="#contact" class="mobile-nav-link block text-slate-700 dark:text-slate-300 hover:text-sabana-gold">Contact</a>
+      <a href="#home" class="mobile-nav-link block text-slate-700 dark:text-slate-300 hover:text-brand-gold">홈</a>
+      <a href="#services" class="mobile-nav-link block text-slate-700 dark:text-slate-300 hover:text-brand-gold">서비스</a>
+      <a href="#works" class="mobile-nav-link block text-slate-700 dark:text-slate-300 hover:text-brand-gold">작업</a>
+      <a href="#process" class="mobile-nav-link block text-slate-700 dark:text-slate-300 hover:text-brand-gold">프로세스</a>
+      <a href="#contact" class="mobile-nav-link block text-slate-700 dark:text-slate-300 hover:text-brand-gold">문의</a>
     </div>
   </header>
 
-  <!-- Main Container -->
   <main class="relative z-10 flex-grow w-full">
 
-    <!-- 1. Hero Section: Chunman-Style Moving Nature Mask Typography & Parallax Dive-In -->
-    <section id="home" class="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden py-20 md:py-28">
-      
-      <!-- Interactive Ecosystem Network & Aurora Canvas -->
+    <!-- 1. Hero -->
+    <section id="home" class="relative min-h-[92vh] flex flex-col items-center justify-center text-center overflow-hidden py-20 md:py-28">
       <canvas id="ecosystem-canvas"></canvas>
-
-      <!-- 3D Cloud Portal (Multi-Layer Parallax) -->
       <div id="cloud-portal" class="cloud-portal">
         <div id="cloud-layer-1" class="cloud-layer cloud-layer-1"></div>
         <div id="cloud-layer-2" class="cloud-layer cloud-layer-2"></div>
       </div>
-
-      <!-- Hero Main Content -->
       <div id="hero-content" class="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 flex flex-col items-center will-change-transform">
-        
-        <!-- Brand Slogan Badge -->
-        <div id="hero-badge" class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-sabana-gold/30 bg-amber-500/10 dark:bg-amber-400/10 text-amber-900 dark:text-amber-300 text-xs font-semibold tracking-wide mb-8 backdrop-blur-md shadow-sm">
-          <span class="text-sm">🌱</span>
-          <span class="font-bold tracking-wider uppercase">Digital Ecosystem Builder</span>
+        <div id="hero-badge" class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-brand-gold/30 bg-amber-500/10 dark:bg-amber-400/10 text-amber-900 dark:text-amber-300 text-xs font-semibold tracking-wide mb-8 backdrop-blur-md shadow-sm">
+          <span class="text-sm">✨</span>
+          <span class="font-bold tracking-wider uppercase">AI Video · Web Studio</span>
         </div>
-
-        <!-- Chunman-style Bold Moving Nature Text Mask (In nature, nothing exists alone.) -->
         <div class="nature-video-mask-container mb-8 max-w-5xl">
-          <h1 id="hero-title" class="nature-masked-text text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight">
-            In nature,<br class="hidden sm:inline" />
-            nothing exists alone.
+          <h1 id="hero-title" class="nature-masked-text hero-ko text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight">
+            AI로 빛을 담는<br /> 영상·웹 스튜디오
           </h1>
         </div>
-
-        <!-- Sub Quote & Brand Description -->
         <p id="hero-subquote" class="text-base sm:text-lg md:text-xl text-slate-700 dark:text-slate-200 max-w-2xl font-semibold leading-relaxed mb-4">
-          기술과 사람이 연결되는 디지털 생태계, <span class="font-black text-slate-900 dark:text-white border-b-2 border-sabana-gold pb-0.5">Sabana</span>입니다.
+          <span class="wordmark text-slate-900 dark:text-white border-b-2 border-brand-gold pb-0.5">BIT<span class="colon">:</span>DAM STUDIO</span> · 빛담 스튜디오
         </p>
-
         <p id="hero-desc" class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed mb-10">
-          단절된 기술 요소를 유기적으로 엮어내어 스스로 생명력을 지니고 번성하는 지속 가능한 웹 경험과 인터랙션을 탐구합니다.
+          빛을 담다, 그리고 디지털(BIT)로 담다.<br class="hidden sm:inline" />
+          AI 광고 영상부터 홍보·유튜브 영상, 숏폼, 웹사이트까지 기획에서 납품까지 함께합니다.
         </p>
-
-        <!-- CTA Buttons -->
         <div id="hero-cta" class="flex flex-wrap items-center justify-center gap-4 mb-12">
-          <a href="#profile" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-800 text-white dark:from-sabana-gold dark:to-amber-500 dark:text-slate-950 font-bold text-sm hover:shadow-lg hover:shadow-sabana-gold/20 transition-all hover:scale-105 flex items-center gap-2">
-            <span>Explore Ecosystem</span>
-            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+          <a href="#contact" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-800 text-white dark:from-brand-gold dark:to-amber-500 dark:text-slate-950 font-bold text-sm hover:shadow-lg hover:shadow-brand-gold/20 transition-all hover:scale-105 flex items-center gap-2">
+            <span>제작 문의</span><i data-lucide="send" class="w-4 h-4"></i>
           </a>
-          <a href="#contact" class="px-6 py-3.5 rounded-2xl border border-slate-300 dark:border-dark-border bg-white/70 dark:bg-dark-card/70 backdrop-blur-md text-slate-800 dark:text-slate-200 font-semibold text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-all hover:scale-105 flex items-center gap-2">
-            <span>Get in Touch</span>
-            <i data-lucide="leaf" class="w-4 h-4 text-sabana-emerald"></i>
+          <a href="#works" class="px-6 py-3.5 rounded-2xl border border-slate-300 dark:border-dark-border bg-white/70 dark:bg-dark-card/70 backdrop-blur-md text-slate-800 dark:text-slate-200 font-semibold text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-all hover:scale-105 flex items-center gap-2">
+            <span>작업 보기</span><i data-lucide="arrow-down" class="w-4 h-4 text-brand-emerald"></i>
           </a>
         </div>
-
-        <!-- Scroll Indicator Hint -->
         <div id="hero-scroll-hint" class="inline-flex flex-col items-center gap-2 text-xs font-semibold text-slate-400 dark:text-slate-500">
-          <span class="tracking-widest uppercase text-[10px]">Scroll to Dive In</span>
+          <span class="tracking-widest uppercase text-[10px]">Scroll</span>
           <div class="w-5 h-8 rounded-full border-2 border-slate-300 dark:border-slate-700 flex items-start justify-center p-1">
-            <div class="w-1.5 h-2 bg-sabana-gold rounded-full animate-bounce"></div>
+            <div class="w-1.5 h-2 bg-brand-gold rounded-full animate-bounce"></div>
           </div>
         </div>
-
       </div>
-
-      <!-- Bottom ambient gradient separator -->
       <div class="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-slate-50 dark:from-dark-bg to-transparent pointer-events-none"></div>
     </section>
 
-    <!-- 2. Profile Section (Parallax Differential Motion & Chips) -->
-    <section id="profile" class="py-28 border-t border-slate-200/80 dark:border-dark-border relative">
+    <!-- 2. 서비스 -->
+    <section id="services" class="py-24 md:py-28 border-t border-slate-200/80 dark:border-dark-border relative">
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        <div class="grid md:grid-cols-12 gap-12 items-start">
-          
-          <!-- Left: Brand Philosophy & Storytelling -->
-          <div class="md:col-span-5 space-y-5 profile-left">
-            <div class="inline-flex items-center gap-2 text-xs font-bold text-sabana-emerald-dark dark:text-sabana-gold uppercase tracking-widest">
-              <i data-lucide="sprout" class="w-4 h-4"></i>
-              Brand Philosophy & Story
+        <div class="services-header flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-bold text-brand-emerald-dark dark:text-brand-gold uppercase tracking-widest mb-3">
+              <i data-lucide="sparkles" class="w-4 h-4"></i> Services
             </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
-              공존과 순환으로<br />진화하는 디지털 생태계
-            </h2>
-            <div class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed space-y-3 pt-2">
-              <p>
-                <strong>사바나(Sabana)</strong>는 수많은 생명이 유기적으로 연결되어 번성하는 대초원처럼, 사람과 기술, 디자인이 조화를 이루는 웹 생태계를 구축합니다.
-              </p>
-              <p>
-                유기적이고 확장 가능한 인터랙션과 사용자 중심의 웹 경험을 만듭니다. 고립된 단일 코드가 아닌, 서로를 지탱하고 확장하는 인터랙티브 아키텍처를 지향합니다.
-              </p>
-            </div>
-
-            <!-- Ecosystem Metric Cards -->
-            <div class="grid grid-cols-2 gap-3 pt-4">
-              <div class="metric-card p-4 rounded-2xl bg-white/70 dark:bg-dark-card/70 border border-slate-200/80 dark:border-dark-border">
-                <div class="text-2xl font-black text-sabana-gold mb-0.5">Connected</div>
-                <div class="text-xs text-slate-500 dark:text-slate-400">유기적인 인터랙션 설계</div>
-              </div>
-              <div class="metric-card p-4 rounded-2xl bg-white/70 dark:bg-dark-card/70 border border-slate-200/80 dark:border-dark-border">
-                <div class="text-2xl font-black text-sabana-emerald mb-0.5">Scalable</div>
-                <div class="text-xs text-slate-500 dark:text-slate-400">지속 가능한 시스템 구축</div>
-              </div>
-            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">서비스</h2>
+            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-3">목적과 채널에 맞는 영상·웹 콘텐츠를 제작합니다.</p>
           </div>
+          <a href="#contact" class="self-start md:self-auto inline-flex items-center gap-2 text-sm font-semibold text-brand-gold hover:underline">견적·일정 문의 <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+        <div id="services-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6"></div>
+      </div>
+    </section>
 
-          <!-- Right: Technical Ecosystem -->
-          <div class="md:col-span-7 profile-right bg-white/80 dark:bg-dark-card/60 backdrop-blur-md rounded-3xl p-6 sm:p-9 border border-slate-200/80 dark:border-dark-border shadow-sm space-y-7">
-            
-            <div class="flex items-center justify-between border-b border-slate-200/70 dark:border-dark-border/80 pb-4">
-              <h3 class="text-sm font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 flex items-center gap-2">
-                <i data-lucide="network" class="w-4 h-4 text-sabana-gold"></i>
-                Ecosystem Tech Stack & Interests
-              </h3>
-              <span class="text-xs text-slate-400">Adaptive Matrix</span>
+    <!-- 3. 작업 사례 -->
+    <section id="works" class="py-24 md:py-28 border-t border-slate-200/80 dark:border-dark-border relative">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="portfolio-header flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-bold text-brand-gold uppercase tracking-widest mb-3">
+              <i data-lucide="clapperboard" class="w-4 h-4"></i> Works
             </div>
-
-            <!-- 1. Core Tech -->
-            <div class="space-y-3">
-              <div class="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-slate-200">
-                <span>🌿</span>
-                <span>Core Tech (Web Architecture)</span>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span class="skill-chip inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-dark-surface text-slate-700 dark:text-slate-300 text-xs font-medium border border-slate-200 dark:border-dark-border hover:border-sabana-emerald transition-colors">
-                  <i data-lucide="code-2" class="w-3.5 h-3.5 text-sabana-emerald"></i>
-                  Web Development
-                </span>
-                <span class="skill-chip inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-dark-surface text-slate-700 dark:text-slate-300 text-xs font-medium border border-slate-200 dark:border-dark-border hover:border-sabana-emerald transition-colors">
-                  <i data-lucide="layers" class="w-3.5 h-3.5 text-sabana-emerald"></i>
-                  Frontend & React / Next.js
-                </span>
-                <span class="skill-chip inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-dark-surface text-slate-700 dark:text-slate-300 text-xs font-medium border border-slate-200 dark:border-dark-border hover:border-sabana-emerald transition-colors">
-                  <i data-lucide="file-code" class="w-3.5 h-3.5 text-sabana-emerald"></i>
-                  JavaScript / TypeScript
-                </span>
-                <span class="skill-chip inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-dark-surface text-slate-700 dark:text-slate-300 text-xs font-medium border border-slate-200 dark:border-dark-border hover:border-sabana-emerald transition-colors">
-                  <i data-lucide="wind" class="w-3.5 h-3.5 text-sabana-emerald"></i>
-                  Tailwind CSS & Modern CSS
-                </span>
-              </div>
-            </div>
-
-            <!-- 2. AI & Innovation -->
-            <div class="space-y-3">
-              <div class="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-slate-200">
-                <span>💡</span>
-                <span>AI & Innovation</span>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span class="skill-chip inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-amber-500/10 text-amber-800 dark:text-amber-300 text-xs font-medium border border-amber-500/20 hover:border-sabana-gold transition-colors">
-                  <i data-lucide="sparkles" class="w-3.5 h-3.5 text-sabana-gold"></i>
-                  AI Integration
-                </span>
-                <span class="skill-chip inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-dark-surface text-slate-700 dark:text-slate-300 text-xs font-medium border border-slate-200 dark:border-dark-border hover:border-sabana-gold transition-colors">
-                  <i data-lucide="terminal" class="w-3.5 h-3.5 text-sabana-gold"></i>
-                  Prompt Engineering
-                </span>
-                <span class="skill-chip inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-dark-surface text-slate-700 dark:text-slate-300 text-xs font-medium border border-slate-200 dark:border-dark-border hover:border-sabana-gold transition-colors">
-                  <i data-lucide="bot" class="w-3.5 h-3.5 text-sabana-gold"></i>
-                  Autonomous LLM Agents
-                </span>
-              </div>
-            </div>
-
-            <!-- 3. Experience & Design -->
-            <div class="space-y-3">
-              <div class="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-slate-200">
-                <span>🎨</span>
-                <span>Experience & Interface</span>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span class="skill-chip inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-dark-surface text-slate-700 dark:text-slate-300 text-xs font-medium border border-slate-200 dark:border-dark-border hover:border-cyan-400 transition-colors">
-                  <i data-lucide="palette" class="w-3.5 h-3.5 text-cyan-500"></i>
-                  UI/UX Design Systems
-                </span>
-                <span class="skill-chip inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-dark-surface text-slate-700 dark:text-slate-300 text-xs font-medium border border-slate-200 dark:border-dark-border hover:border-cyan-400 transition-colors">
-                  <i data-lucide="activity" class="w-3.5 h-3.5 text-cyan-500"></i>
-                  Interactive Web & Micro-interactions
-                </span>
-                <span class="skill-chip inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-dark-surface text-slate-700 dark:text-slate-300 text-xs font-medium border border-slate-200 dark:border-dark-border hover:border-cyan-400 transition-colors">
-                  <i data-lucide="box" class="w-3.5 h-3.5 text-cyan-500"></i>
-                  3D & Canvas Graphics
-                </span>
-              </div>
-            </div>
-
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">작업 사례</h2>
+            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-3">카드에서 미리보기를 확인하고, 누르면 크게 볼 수 있습니다.</p>
           </div>
+          <div id="filter-tabs" role="tablist" class="flex flex-wrap gap-2"></div>
+        </div>
+        <div id="works-grid" class="space-y-16"></div>
+        <p id="works-empty" class="hidden text-center text-sm text-slate-500 py-16">해당 분류의 작업이 아직 없습니다.</p>
+      </div>
+    </section>
 
+    <!-- 4. 프로세스 -->
+    <section id="process" class="py-24 md:py-28 border-t border-slate-200/80 dark:border-dark-border relative overflow-hidden">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="process-header text-center max-w-2xl mx-auto mb-14 md:mb-16">
+          <div class="inline-flex items-center gap-2 text-xs font-bold text-brand-emerald-dark dark:text-brand-emerald uppercase tracking-widest mb-3">
+            <i data-lucide="workflow" class="w-4 h-4"></i> Process
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">제작 프로세스</h2>
+          <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-3">상담부터 납품까지, 단계마다 확인하며 진행합니다.</p>
+        </div>
+        <div class="relative">
+          <div class="hidden lg:block absolute top-11 left-[12.5%] right-[12.5%] h-0.5 bg-slate-200 dark:bg-dark-border rounded-full"></div>
+          <div id="process-line" class="hidden lg:block absolute top-11 left-[12.5%] h-0.5 w-0 bg-gradient-to-r from-brand-emerald via-brand-gold to-amber-500 rounded-full" style="max-width:75%"></div>
+          <ol id="process-list" class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6"></ol>
         </div>
       </div>
     </section>
 
-    <!-- 3. Ecosystem Journey / Timeline Section (ScrollTrigger Synced Line & Node Flip) -->
-    <section id="journey" class="py-28 border-t border-slate-200/80 dark:border-dark-border relative overflow-hidden">
+    <!-- 5. 문의 -->
+    <section id="contact" class="py-24 md:py-28 border-t border-slate-200/80 dark:border-dark-border relative">
       <div class="max-w-5xl mx-auto px-5 sm:px-8">
-        
-        <!-- Section Header -->
-        <div class="journey-header text-center max-w-2xl mx-auto mb-20">
-          <div class="inline-flex items-center gap-2 text-xs font-bold text-sabana-emerald-dark dark:text-sabana-emerald uppercase tracking-widest mb-3">
-            <i data-lucide="git-commit" class="w-4 h-4"></i>
-            Growth & Evolution
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            사바나 생태계의 여정
-          </h2>
-          <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-3">
-            씨앗에서 시작되어 유기적으로 연결되고 확장되는 디지털 생태계의 타임라인입니다.
-          </p>
-        </div>
-
-        <!-- Timeline Container -->
-        <div id="timeline-container" class="relative">
-          
-          <!-- Background Base Line -->
-          <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-slate-200 dark:bg-dark-border rounded-full"></div>
-          
-          <!-- Animated Active Progress Line (Controlled by ScrollTrigger Scrub) -->
-          <div id="timeline-progress-line" class="absolute left-6 md:left-1/2 top-0 w-1 -translate-x-1/2 bg-gradient-to-b from-sabana-emerald via-sabana-gold to-amber-500 rounded-full shadow-sm shadow-sabana-gold/50 h-0"></div>
-
-          <!-- Timeline Items List -->
-          <div class="space-y-16 md:space-y-24 relative z-10">
-
-            <!-- Timeline Item 1: Genesis & Seed -->
-            <div class="timeline-item flex flex-col md:flex-row items-start md:items-center w-full group">
-              <!-- Left Content on Desktop -->
-              <div class="w-full md:w-1/2 pl-14 md:pl-0 md:pr-12 md:text-right order-2 md:order-1 timeline-text">
-                <span class="inline-block px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-emerald-100/90 text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-300 mb-2.5">
-                  Phase 01 • Genesis
-                </span>
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-sabana-emerald transition-colors">
-                  생태계의 씨앗 & 코어 철학 정립
-                </h3>
-                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                  자연의 상호작용 원리를 디지털 웹에 적용하는 'Sabana Ecosystem' 콘셉트를 기획하고, 현대적인 모던 웹 아키텍처와 시맨틱 인터랙션의 기초를 마련했습니다.
-                </p>
-              </div>
-
-              <!-- Center Node Badge -->
-              <div class="timeline-node absolute left-6 md:left-1/2 -translate-x-1/2 w-11 h-11 rounded-2xl bg-white dark:bg-dark-card border-2 border-slate-300 dark:border-dark-border flex items-center justify-center text-sabana-emerald shadow-md order-1 md:order-2 group-hover:border-sabana-emerald group-hover:shadow-emerald-500/20">
-                <i data-lucide="sprout" class="w-5 h-5"></i>
-              </div>
-
-              <!-- Right Spacer on Desktop -->
-              <div class="hidden md:block w-1/2 md:pl-12 order-3">
-                <span class="text-xs font-semibold text-slate-400 dark:text-slate-500">2024 - 2025</span>
-              </div>
-            </div>
-
-            <!-- Timeline Item 2: Growth & Systems -->
-            <div class="timeline-item flex flex-col md:flex-row items-start md:items-center w-full group">
-              <!-- Left Spacer on Desktop -->
-              <div class="hidden md:block w-1/2 md:pr-12 md:text-right order-1">
-                <span class="text-xs font-semibold text-slate-400 dark:text-slate-500">2025</span>
-              </div>
-
-              <!-- Center Node Badge -->
-              <div class="timeline-node absolute left-6 md:left-1/2 -translate-x-1/2 w-11 h-11 rounded-2xl bg-white dark:bg-dark-card border-2 border-slate-300 dark:border-dark-border flex items-center justify-center text-sabana-gold shadow-md order-1 md:order-2 group-hover:border-sabana-gold group-hover:shadow-sabana-gold/20">
-                <i data-lucide="layers" class="w-5 h-5"></i>
-              </div>
-
-              <!-- Right Content on Desktop -->
-              <div class="w-full md:w-1/2 pl-14 md:pl-12 order-2 md:order-3 timeline-text">
-                <span class="inline-block px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-amber-100/90 text-amber-900 dark:bg-amber-950/60 dark:text-amber-300 mb-2.5">
-                  Phase 02 • System Growth
-                </span>
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-sabana-gold transition-colors">
-                  인터랙티브 디자인 시스템 구축
-                </h3>
-                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                  재사용성과 접근성을 극대화한 UI/UX 토큰 시스템 및 마이크로 인터랙션 라이브러리를 개발하여 복잡한 데이터 인터페이스를 유기적으로 연결했습니다.
-                </p>
-              </div>
-            </div>
-
-            <!-- Timeline Item 3: AI & Innovation -->
-            <div class="timeline-item flex flex-col md:flex-row items-start md:items-center w-full group">
-              <!-- Left Content on Desktop -->
-              <div class="w-full md:w-1/2 pl-14 md:pl-0 md:pr-12 md:text-right order-2 md:order-1 timeline-text">
-                <span class="inline-block px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-cyan-100/90 text-cyan-900 dark:bg-cyan-950/60 dark:text-cyan-300 mb-2.5">
-                  Phase 03 • Intelligence
-                </span>
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-cyan-500 transition-colors">
-                  자율형 AI 에이전트 & 노드 자동화
-                </h3>
-                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                  LLM 기반 자율 에이전트와 시각적 워크플로우를 결합한 AI 스튜디오를 런칭하고, 사용자와 코드가 실시간으로 상호작용하는 지능형 환경을 구축했습니다.
-                </p>
-              </div>
-
-              <!-- Center Node Badge -->
-              <div class="timeline-node absolute left-6 md:left-1/2 -translate-x-1/2 w-11 h-11 rounded-2xl bg-white dark:bg-dark-card border-2 border-slate-300 dark:border-dark-border flex items-center justify-center text-cyan-500 shadow-md order-1 md:order-2 group-hover:border-cyan-500 group-hover:shadow-cyan-500/20">
-                <i data-lucide="sparkles" class="w-5 h-5"></i>
-              </div>
-
-              <!-- Right Spacer on Desktop -->
-              <div class="hidden md:block w-1/2 md:pl-12 order-3">
-                <span class="text-xs font-semibold text-slate-400 dark:text-slate-500">2026 (Present)</span>
-              </div>
-            </div>
-
-            <!-- Timeline Item 4: Global Ecosystem Expansion -->
-            <div class="timeline-item flex flex-col md:flex-row items-start md:items-center w-full group">
-              <!-- Left Spacer on Desktop -->
-              <div class="hidden md:block w-1/2 md:pr-12 md:text-right order-1">
-                <span class="text-xs font-semibold text-slate-400 dark:text-slate-500">Future Horizon</span>
-              </div>
-
-              <!-- Center Node Badge -->
-              <div class="timeline-node absolute left-6 md:left-1/2 -translate-x-1/2 w-11 h-11 rounded-2xl bg-white dark:bg-dark-card border-2 border-slate-300 dark:border-dark-border flex items-center justify-center text-purple-500 shadow-md order-1 md:order-2 group-hover:border-purple-500 group-hover:shadow-purple-500/20">
-                <i data-lucide="globe" class="w-5 h-5"></i>
-              </div>
-
-              <!-- Right Content on Desktop -->
-              <div class="w-full md:w-1/2 pl-14 md:pl-12 order-2 md:order-3 timeline-text">
-                <span class="inline-block px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-purple-100/90 text-purple-900 dark:bg-purple-950/60 dark:text-purple-300 mb-2.5">
-                  Phase 04 • Expansion
-                </span>
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-purple-500 transition-colors">
-                  차세대 다차원 생태계 확장
-                </h3>
-                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                  WebGPU, 3D Canvas, 실시간 데이터 스트림을 결합하여 경계를 허무는 몰입형 웹 경험과 지속 가능한 디지털 생태계 확장을 진행 중입니다.
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 4. Portfolio Section (Staggered Parallax Cards & 3D Tilt) -->
-    <section id="portfolio" class="py-28 border-t border-slate-200/80 dark:border-dark-border relative">
-      <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        
-        <!-- Section Header -->
-        <div class="portfolio-header text-center max-w-2xl mx-auto mb-16">
-          <div class="inline-flex items-center gap-2 text-xs font-bold text-sabana-gold uppercase tracking-widest mb-3">
-            <i data-lucide="boxes" class="w-4 h-4"></i>
-            Ecosystem Projects
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            생태계 속에서 피어난 프로젝트들
-          </h2>
-          <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-3">
-            각 요소가 상호작용하며 생명력을 갖도록 구축된 사바나의 대표 디지털 결과물입니다.
-          </p>
-        </div>
-
-        <!-- 3D Tilt Portfolio Grid (Parallax Movement on Scroll) -->
-        <div class="grid md:grid-cols-3 gap-8 portfolio-grid items-start">
-          
-          <!-- Card 1: AI Workflow Ecosystem -->
-          <div class="tilt-card-container portfolio-card-wrap" data-parallax-speed="-30">
-            <article class="tilt-card group relative bg-white dark:bg-dark-card rounded-3xl border border-slate-200 dark:border-dark-border overflow-hidden shadow-md hover:shadow-2xl hover:border-sabana-gold/60 dark:hover:border-sabana-gold/50 flex flex-col justify-between h-full">
-              <!-- Dynamic Sheen Overlay -->
-              <div class="card-sheen"></div>
-
-              <div class="tilt-card-inner">
-                <!-- Thumbnail Graphic Area -->
-                <div class="h-48 bg-gradient-to-br from-amber-500/10 via-amber-400/15 to-sabana-gold/25 dark:from-amber-950/40 dark:to-yellow-900/30 relative overflow-hidden flex items-center justify-center border-b border-slate-100 dark:border-dark-border">
-                  <div class="w-16 h-16 rounded-2xl bg-white dark:bg-dark-bg/90 shadow-md flex items-center justify-center text-sabana-gold group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                    <i data-lucide="sparkles" class="w-8 h-8"></i>
-                  </div>
-                  <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-amber-100/90 text-amber-900 dark:bg-amber-950/60 dark:text-amber-300 backdrop-blur-md">
-                    AI Ecosystem
-                  </span>
+        <div id="contact-card" class="relative bg-gradient-to-b from-white to-amber-50/30 dark:from-dark-card dark:to-dark-bg/95 rounded-3xl p-6 sm:p-10 lg:p-12 border border-slate-200 dark:border-dark-border shadow-xl overflow-hidden">
+          <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-brand-emerald via-brand-gold to-amber-500"></div>
+          <div class="grid lg:grid-cols-5 gap-10">
+            <div class="lg:col-span-2 space-y-6">
+              <div>
+                <div class="inline-flex items-center gap-2 text-xs font-bold text-brand-gold uppercase tracking-widest mb-4">
+                  <i data-lucide="send" class="w-4 h-4"></i> Contact
                 </div>
-
-                <!-- Text Content -->
-                <div class="p-6 sm:p-7">
-                  <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2.5 group-hover:text-sabana-gold transition-colors">
-                    AI Workflow Studio
-                  </h3>
-                  <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-5">
-                    지능형 에이전트들이 유기적으로 연결되어 작업 파이프라인을 자동화하고 자생적으로 확장하는 노드 기반 스튜디오입니다.
-                  </p>
-
-                  <!-- Tags -->
-                  <div class="flex flex-wrap gap-1.5 mb-6">
-                    <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-dark-surface text-slate-600 dark:text-slate-300 font-medium">Next.js 14</span>
-                    <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-dark-surface text-slate-600 dark:text-slate-300 font-medium">TypeScript</span>
-                    <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-dark-surface text-slate-600 dark:text-slate-300 font-medium">OpenAI API</span>
-                  </div>
-                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-3">제작 문의</h2>
+                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">만들고 싶은 영상이나 웹사이트에 대해 편하게 알려주세요. 내용 확인 후 연락드립니다. 비용은 범위와 일정에 따라 달라 <b class="text-slate-700 dark:text-slate-200">별도 문의</b>로 안내드립니다.</p>
               </div>
-
-              <!-- Card Action Button -->
-              <div class="tilt-card-inner px-6 sm:px-7 pb-6 pt-0">
-                <button onclick="openModal('AI Workflow Studio', '지능형 에이전트들이 유기적으로 연결되어 작업 파이프라인을 자동화하고 자생적으로 확장하는 노드 기반 스튜디오입니다. 복잡한 멀티모달 프롬프트 체이닝과 비즈니스 로직을 시각적 드래그 앤 드롭으로 완성할 수 있습니다.', ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'OpenAI API', 'Zustand', 'React Flow'])" class="w-full py-2.5 px-4 rounded-xl border border-slate-200 dark:border-dark-border text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-slate-900 hover:text-white dark:hover:bg-sabana-gold dark:hover:text-slate-950 transition-all flex items-center justify-center gap-1.5 group-hover:border-sabana-gold">
-                  <span>자세히 보기</span>
-                  <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+              <div class="space-y-3">
+                <a id="email-link" href="#" class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/80 dark:bg-dark-surface border border-slate-200 dark:border-dark-border text-sm font-semibold text-slate-800 dark:text-slate-200 hover:border-brand-gold/60 transition-colors break-all">
+                  <i data-lucide="mail" class="w-4 h-4 text-brand-gold shrink-0"></i><span id="email-text"></span>
+                </a>
+                <button type="button" onclick="copyEmail()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-dark-border bg-white dark:bg-dark-surface text-slate-700 dark:text-slate-300 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                  <i data-lucide="copy" class="w-3.5 h-3.5 text-brand-gold"></i><span>이메일 주소 복사</span>
                 </button>
               </div>
-            </article>
-          </div>
-
-          <!-- Card 2: EcoSphere Analytics -->
-          <div class="tilt-card-container portfolio-card-wrap md:mt-8" data-parallax-speed="40">
-            <article class="tilt-card group relative bg-white dark:bg-dark-card rounded-3xl border border-slate-200 dark:border-dark-border overflow-hidden shadow-md hover:shadow-2xl hover:border-sabana-emerald/60 dark:hover:border-sabana-emerald/50 flex flex-col justify-between h-full">
-              <!-- Dynamic Sheen Overlay -->
-              <div class="card-sheen"></div>
-
-              <div class="tilt-card-inner">
-                <!-- Thumbnail Graphic Area -->
-                <div class="h-48 bg-gradient-to-br from-emerald-500/10 via-teal-500/15 to-emerald-700/25 dark:from-emerald-950/40 dark:to-teal-900/30 relative overflow-hidden flex items-center justify-center border-b border-slate-100 dark:border-dark-border">
-                  <div class="w-16 h-16 rounded-2xl bg-white dark:bg-dark-bg/90 shadow-md flex items-center justify-center text-sabana-emerald group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                    <i data-lucide="activity" class="w-8 h-8"></i>
-                  </div>
-                  <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-emerald-100/90 text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-300 backdrop-blur-md">
-                    Live Data
-                  </span>
-                </div>
-
-                <!-- Text Content -->
-                <div class="p-6 sm:p-7">
-                  <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2.5 group-hover:text-sabana-emerald transition-colors">
-                    EcoSphere Analytics
-                  </h3>
-                  <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-5">
-                    자연 생태계 및 탄소 순환 데이터를 실시간으로 모니터링하고 시각적 인사이트를 제공하는 대시보드입니다.
-                  </p>
-
-                  <!-- Tags -->
-                  <div class="flex flex-wrap gap-1.5 mb-6">
-                    <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-dark-surface text-slate-600 dark:text-slate-300 font-medium">React</span>
-                    <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-dark-surface text-slate-600 dark:text-slate-300 font-medium">D3.js Data Viz</span>
-                    <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-dark-surface text-slate-600 dark:text-slate-300 font-medium">WebSockets</span>
-                  </div>
-                </div>
+              <div class="pt-6 border-t border-slate-200/70 dark:border-dark-border/80">
+                <p class="text-xs uppercase font-bold text-slate-400 dark:text-slate-500 mb-4 tracking-widest">Channels</p>
+                <div id="social-icons-group" class="flex items-center gap-3 flex-wrap"></div>
               </div>
-
-              <!-- Card Action Button -->
-              <div class="tilt-card-inner px-6 sm:px-7 pb-6 pt-0">
-                <button onclick="openModal('EcoSphere Analytics', '자연 생태계 및 탄소 순환 데이터를 실시간으로 모니터링하고 시각적 인사이트를 제공하는 고성능 인터랙티브 대시보드 플랫폼입니다. 대용량 실시간 시계열 스트림 데이터를 지연 없이 렌더링합니다.', ['React', 'TypeScript', 'D3.js', 'Tailwind CSS', 'WebSockets', 'Web Workers'])" class="w-full py-2.5 px-4 rounded-xl border border-slate-200 dark:border-dark-border text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-slate-900 hover:text-white dark:hover:bg-sabana-emerald dark:hover:text-slate-950 transition-all flex items-center justify-center gap-1.5 group-hover:border-sabana-emerald">
-                  <span>자세히 보기</span>
-                  <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
-                </button>
-              </div>
-            </article>
-          </div>
-
-          <!-- Card 3: Nova Design System -->
-          <div class="tilt-card-container portfolio-card-wrap" data-parallax-speed="-20">
-            <article class="tilt-card group relative bg-white dark:bg-dark-card rounded-3xl border border-slate-200 dark:border-dark-border overflow-hidden shadow-md hover:shadow-2xl hover:border-cyan-500/60 dark:hover:border-cyan-400/50 flex flex-col justify-between h-full">
-              <!-- Dynamic Sheen Overlay -->
-              <div class="card-sheen"></div>
-
-              <div class="tilt-card-inner">
-                <!-- Thumbnail Graphic Area -->
-                <div class="h-48 bg-gradient-to-br from-cyan-500/10 via-blue-500/15 to-indigo-700/25 dark:from-cyan-950/40 dark:to-indigo-900/30 relative overflow-hidden flex items-center justify-center border-b border-slate-100 dark:border-dark-border">
-                  <div class="w-16 h-16 rounded-2xl bg-white dark:bg-dark-bg/90 shadow-md flex items-center justify-center text-cyan-600 dark:text-cyan-400 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                    <i data-lucide="component" class="w-8 h-8"></i>
-                  </div>
-                  <span class="absolute top-4 right-4 px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-cyan-100/90 text-cyan-900 dark:bg-cyan-950/60 dark:text-cyan-300 backdrop-blur-md">
-                    Design System
-                  </span>
-                </div>
-
-                <!-- Text Content -->
-                <div class="p-6 sm:p-7">
-                  <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2.5 group-hover:text-cyan-500 transition-colors">
-                    Nova Design Tokens
-                  </h3>
-                  <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-5">
-                    컴포넌트들이 유기적으로 결합하여 일관된 인터랙션을 유지하는 차세대 디자인 시스템 및 토큰 아키텍처입니다.
-                  </p>
-
-                  <!-- Tags -->
-                  <div class="flex flex-wrap gap-1.5 mb-6">
-                    <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-dark-surface text-slate-600 dark:text-slate-300 font-medium">Storybook</span>
-                    <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-dark-surface text-slate-600 dark:text-slate-300 font-medium">Framer Motion</span>
-                    <span class="text-[11px] px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-dark-surface text-slate-600 dark:text-slate-300 font-medium">WAI-ARIA</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card Action Button -->
-              <div class="tilt-card-inner px-6 sm:px-7 pb-6 pt-0">
-                <button onclick="openModal('Nova Design Tokens', '컴포넌트들이 유기적으로 결합하여 일관된 인터랙션을 유지하는 차세대 디자인 시스템 및 토큰 아키텍처입니다. 완벽한 접근성 표준과 다크모드, 유려한 마이크로 인터랙션을 기본 제공합니다.', ['Storybook', 'Framer Motion', 'Radix UI', 'Tailwind CSS', 'Figma Tokens'])" class="w-full py-2.5 px-4 rounded-xl border border-slate-200 dark:border-dark-border text-xs font-bold text-slate-800 dark:text-slate-200 hover:bg-slate-900 hover:text-white dark:hover:bg-cyan-500 dark:hover:text-slate-950 transition-all flex items-center justify-center gap-1.5 group-hover:border-cyan-500">
-                  <span>자세히 보기</span>
-                  <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
-                </button>
-              </div>
-            </article>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- 5. Contact Section (ScrollTrigger Stagger Cards & Brand Channels) -->
-    <section id="contact" class="py-28 border-t border-slate-200/80 dark:border-dark-border relative">
-      <div class="max-w-4xl mx-auto px-5 sm:px-8">
-        
-        <div id="contact-card" class="relative bg-gradient-to-b from-white to-amber-50/30 dark:from-dark-card dark:to-dark-bg/95 rounded-3xl p-8 sm:p-14 border border-slate-200 dark:border-dark-border shadow-xl text-center overflow-hidden">
-          
-          <!-- Subtle Top Accent Light -->
-          <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-sabana-emerald via-sabana-gold to-amber-500"></div>
-
-          <!-- Section Badge -->
-          <div class="inline-flex items-center gap-2 text-xs font-bold text-sabana-gold uppercase tracking-widest mb-4">
-            <i data-lucide="send" class="w-4 h-4"></i>
-            Join the Ecosystem
-          </div>
-
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-3">
-            함께 새로운 생태계를 연결해봐요
-          </h2>
-
-          <!-- Brand Message Subtitle -->
-          <p class="text-sm sm:text-base font-medium text-slate-600 dark:text-slate-300 italic mb-2">
-            “Connecting ideas, creating ecosystems.”
-          </p>
-
-          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-lg mx-auto mb-9 leading-relaxed">
-            새로운 아이디어 협업, 기술적인 탐구, 혹은 가벼운 커피챗도 언제나 환영합니다. 사바나 생태계의 새로운 노드가 되어주세요.
-          </p>
-
-          <!-- Email Copy & Mailto Box -->
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
-            <a href="mailto:gj3130@gmail.com" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-slate-900 text-white dark:bg-sabana-gold dark:text-slate-950 text-sm font-bold hover:opacity-95 transition-all hover:scale-105 shadow-md">
-              <i data-lucide="mail" class="w-4 h-4"></i>
-              <span>gj3130@gmail.com</span>
-            </a>
-            <button onclick="copyEmail()" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl border border-slate-300 dark:border-dark-border bg-white dark:bg-dark-surface text-slate-700 dark:text-slate-300 text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all hover:scale-105">
-              <i data-lucide="copy" class="w-4 h-4 text-sabana-gold"></i>
-              <span>이메일 주소 복사</span>
-            </button>
-          </div>
-
-          <!-- Social Channels with High-Reliability Native SVGs & Brand Colors -->
-          <div class="pt-8 border-t border-slate-200/70 dark:border-dark-border/80">
-            <p class="text-xs uppercase font-bold text-slate-400 dark:text-slate-500 mb-5 tracking-widest">
-              Social Ecosystem Channels
-            </p>
-            <div id="social-icons-group" class="flex items-center justify-center gap-4 flex-wrap">
-              
-              <!-- 1. Instagram -->
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-btn w-13 h-13 p-3.5 rounded-2xl border border-slate-200 dark:border-dark-border bg-white dark:bg-dark-surface flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-pink-500 hover:border-pink-500/50 hover:shadow-lg hover:shadow-pink-500/15 transition-all shadow-sm">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-              </a>
-
-              <!-- 2. TikTok -->
-              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social-btn w-13 h-13 p-3.5 rounded-2xl border border-slate-200 dark:border-dark-border bg-white dark:bg-dark-surface flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-400/15 transition-all shadow-sm">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                  <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-                </svg>
-              </a>
-
-              <!-- 3. WordPress -->
-              <a href="https://wordpress.org" target="_blank" rel="noopener noreferrer" aria-label="WordPress" class="social-btn w-13 h-13 p-3.5 rounded-2xl border border-slate-200 dark:border-dark-border bg-white dark:bg-dark-surface flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-blue-500 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/15 transition-all shadow-sm">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                  <path d="M11.996 0a12 12 0 0 0-12 12c0 5.482 3.678 10.106 8.678 11.536L3.92 10.59a9.664 9.664 0 0 1 8.076-8.234v-.004c.002 0 .002 0 0 0zM12 24a11.97 11.97 0 0 0 6.643-2.006l-4.148-12.025-3.327 9.662A9.684 9.684 0 0 0 12 24zm9.324-14.464c.264.793.41 1.637.41 2.514 0 3.324-1.71 6.248-4.28 7.915l3.87-10.429zm.41-1.898c-.144-1.285-.699-2.45-1.542-3.385l.004-.003c.536 1.042.84 2.22.84 3.47 0 .167-.008.332-.023.494l.721-.576zM12 2.356c1.17 0 2.285.214 3.315.602l-2.012 5.84-1.303-3.79V2.356zm-1.854.27v2.853L8.68 10.024 5.922 2.85c1.23-.33 2.527-.514 3.864-.514.12 0 .24.004.36.009z"/>
-                </svg>
-              </a>
-
-              <!-- 4. YouTube -->
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-btn w-13 h-13 p-3.5 rounded-2xl border border-slate-200 dark:border-dark-border bg-white dark:bg-dark-surface flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-red-500 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/15 transition-all shadow-sm">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-              </a>
-
             </div>
+            <form id="inquiry-form" class="lg:col-span-3 space-y-4" novalidate>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <label class="block">
+                  <span class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">이름 / 회사명 <span class="text-brand-gold">*</span></span>
+                  <input id="f-name" name="name" type="text" class="field" placeholder="홍길동 / OO브랜드" autocomplete="name" required />
+                </label>
+                <label class="block">
+                  <span class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">연락처 <span class="text-brand-gold">*</span></span>
+                  <input id="f-contact" name="contact" type="text" class="field" placeholder="전화번호 또는 이메일" autocomplete="tel" required />
+                </label>
+              </div>
+              <label class="block">
+                <span class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">서비스</span>
+                <select id="f-service" name="service" class="field"></select>
+              </label>
+              <label class="block">
+                <span class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1.5">문의 내용 <span class="text-brand-gold">*</span></span>
+                <textarea id="f-message" name="message" rows="6" class="field resize-y" placeholder="제작 목적, 희망 일정, 참고 자료 등을 적어주세요." required></textarea>
+              </label>
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-1">
+                <p class="text-[11px] text-slate-400 leading-relaxed">보내기를 누르면 메일 앱이 열리며 작성한 내용이 채워집니다.</p>
+                <button type="submit" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-slate-900 text-white dark:bg-brand-gold dark:text-slate-950 text-sm font-bold hover:opacity-95 transition-all hover:scale-[1.03] shadow-md shrink-0">
+                  <i data-lucide="send" class="w-4 h-4"></i><span>문의 보내기</span>
+                </button>
+              </div>
+            </form>
           </div>
-
         </div>
-
       </div>
     </section>
-
   </main>
 
-  <!-- Footer -->
-  <footer class="relative z-10 border-t border-slate-200/80 dark:border-dark-border py-9 text-center text-xs text-slate-500 dark:text-slate-500 bg-white/50 dark:bg-dark-bg/80 backdrop-blur-md">
-    <div class="max-w-6xl mx-auto px-5 space-y-2">
-      <p class="font-medium text-slate-600 dark:text-slate-400 tracking-wide">
-        “Connecting ideas, creating ecosystems.”
-      </p>
-      <p class="font-normal tracking-wide">
-        ⓒSabana 2026. All rights reserved.
-      </p>
-    </div>
+  <footer class="relative z-10 border-t border-slate-200/80 dark:border-dark-border py-9 text-center text-xs text-slate-500 bg-white/50 dark:bg-dark-bg/80 backdrop-blur-md">
+    <p class="mb-2"><span class="wordmark text-sm text-slate-700 dark:text-slate-300">BIT<span class="colon">:</span>DAM</span> <span class="text-[9px] font-bold tracking-[0.3em] uppercase">Studio</span> <span class="mx-1 opacity-50">·</span> 빛담 스튜디오</p>
+    <p class="font-normal tracking-wide">© 2026 EDAM</p>
   </footer>
 
-  <!-- Project Detail Modal -->
-  <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
-    <div class="bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-2xl transform scale-95 transition-transform duration-300" id="modal-content">
-      <div class="flex items-center justify-between mb-4">
-        <h3 id="modal-title" class="text-xl font-bold text-slate-900 dark:text-white">프로젝트 명</h3>
-        <button onclick="closeModal()" aria-label="Close modal" class="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-      </div>
-      <p id="modal-desc" class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6"></p>
-      <div class="mb-6">
-        <span class="text-xs font-bold text-slate-400 dark:text-slate-500 block mb-2.5 uppercase tracking-wider">사용한 기술 스택</span>
-        <div id="modal-tags" class="flex flex-wrap gap-1.5"></div>
-      </div>
-      <div class="flex justify-end gap-3 pt-4 border-t border-slate-100 dark:border-dark-border">
-        <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-slate-900 text-white dark:bg-sabana-gold dark:text-slate-950 font-bold text-xs hover:opacity-90 transition-opacity">
-          확인 / 닫기
-        </button>
+  <!-- 작업물 상세 모달 -->
+  <div id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+    <div id="modal-content" class="relative bg-white dark:bg-dark-card border border-slate-200 dark:border-dark-border w-full rounded-3xl shadow-2xl transform scale-95 transition-transform duration-300 max-h-[94vh] overflow-y-auto">
+      <button onclick="closeModal()" aria-label="닫기" class="absolute top-3 right-3 z-10 w-9 h-9 rounded-xl flex items-center justify-center bg-slate-900/60 text-white hover:bg-slate-900/80 transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div id="modal-layout">
+        <div id="modal-media" class="bg-black flex items-center justify-center"></div>
+        <div class="p-6 sm:p-8 space-y-5">
+          <div>
+            <div id="modal-badges" class="flex flex-wrap gap-1.5 mb-3"></div>
+            <h3 id="modal-title" class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white pr-8"></h3>
+            <p id="modal-context" class="text-sm text-brand-gold font-semibold mt-1"></p>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-slate-400 dark:text-slate-500 block mb-1.5 uppercase tracking-wider">담당 역할</span>
+            <div id="modal-role" class="text-sm text-slate-700 dark:text-slate-300"></div>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-slate-400 dark:text-slate-500 block mb-1.5 uppercase tracking-wider">설명</span>
+            <div id="modal-desc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></div>
+          </div>
+          <div id="modal-tools-wrap">
+            <span class="text-xs font-bold text-slate-400 dark:text-slate-500 block mb-2 uppercase tracking-wider">사용 툴</span>
+            <div id="modal-tools" class="flex flex-wrap gap-1.5"></div>
+          </div>
+          <div id="modal-links" class="flex flex-wrap gap-2 pt-2"></div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- JavaScript Logics with GSAP & ScrollTrigger & Multi-Layer Parallax -->
   <script>
-    // 1. Lucide Icons Init
-    lucide.createIcons();
+    /* =================================================================
+       ✏️ 콘텐츠 데이터 — 여기만 수정하면 사이트 내용이 바뀝니다.
+       - 빈 문자열('')이나 빈 배열([])은 화면에 "입력해주세요" 표시로 나옵니다.
+       - 새 작업 추가: PROJECTS 배열에 객체 하나를 추가하세요.
+         type: 'video'(로컬 mp4) | 'youtube' | 'web'
+         genre: 장르 하나만 ('광고' | '공모전' | '유튜브' | '웹')
+         orientation: 'landscape'(16:9) | 'portrait'(9:16)
+       ================================================================= */
+    const PROFILE = {
+      brand: 'BIT:DAM STUDIO',
+      brandKo: '빛담 스튜디오',
+      email: 'gj3130@gmail.com',
+    };
 
-    // Register GSAP ScrollTrigger plugin
+    const SOCIALS = [
+      { name: 'YouTube',   url: 'https://www.youtube.com/@illian0l27', icon: 'youtube' },
+      { name: 'Instagram', url: '', icon: 'instagram' },   // TODO: 주소 입력
+      { name: 'GitHub',    url: '', icon: 'github' },      // TODO: 주소 입력
+    ];
+
+    // 서비스 (가격은 표기하지 않고 '가격 문의'로 안내)
+    const SERVICES = [
+      { title: 'AI 광고 영상', icon: 'sparkles', desc: '생성형 AI를 활용해 제품·브랜드 광고 영상을 기획하고 제작합니다.', tags: ['브랜드 광고', '제품 광고'] },
+      { title: '홍보·유튜브 영상', icon: 'clapperboard', desc: '기관·기업 홍보 영상과 유튜브 콘텐츠를 구성부터 편집까지 제작합니다.', tags: ['홍보 영상', '유튜브'] },
+      { title: '숏폼', icon: 'smartphone', desc: '릴스·쇼츠·틱톡 등 세로형 채널에 맞춘 짧은 영상을 제작합니다.', tags: ['Reels', 'Shorts'] },
+      { title: '웹사이트 제작', icon: 'monitor-smartphone', desc: '소개·랜딩 페이지부터 반응형 웹사이트까지 기획하고 구축합니다.', tags: ['랜딩 페이지', '반응형 웹'] },
+    ];
+
+    // 제작 프로세스
+    const PROCESS = [
+      { step: '상담', icon: 'messages-square', desc: '목적, 일정, 예산 범위와 참고 자료를 함께 확인합니다.' },
+      { step: '기획', icon: 'lightbulb', desc: '콘셉트와 구성안(스토리보드·사이트 구조)을 정리해 공유합니다.' },
+      { step: '제작', icon: 'wand-sparkles', desc: '확정된 기획에 따라 제작하고, 중간 결과를 보며 수정합니다.' },
+      { step: '납품', icon: 'package-check', desc: '최종 파일 전달 또는 사이트 배포 후 마무리 점검을 진행합니다.' },
+    ];
+
+    // 장르(genre)는 하나만: '광고' | '공모전' | '유튜브' | '웹'
+    const GENRES = ['광고', '공모전', '유튜브', '웹'];
+    const FILTERS = ['전체', ...GENRES];
+
+    const PROJECTS = [
+      // 광고
+      { id: 'nouveau',     type: 'video', title: '누보로스팅 커피 광고', genre: '광고', orientation: 'portrait',
+        thumb: 'media/nouveau.jpg', preview: 'media/nouveau.mp4', context: '', role: '', description: '', tools: [], links: [] },
+      { id: 'noad',        type: 'video', title: 'NOAD 정수기 광고', genre: '광고', orientation: 'landscape',
+        thumb: 'media/noad.jpg', preview: 'media/noad.mp4', context: '', role: '', description: '', tools: [], links: [] },
+      // 공모전
+      { id: 'onetree',     type: 'video', title: '한 그루의 시간', genre: '공모전', orientation: 'portrait',
+        thumb: 'media/onetree.jpg', preview: 'media/onetree.mp4', context: '공모전 출품', role: '', description: '', tools: [], links: [] },
+      { id: 'shorts-JmnpKyzdCiM', type: 'youtube', title: '네이버 비행단, 하늘에 쓰다', genre: '공모전', orientation: 'portrait',
+        youtubeId: 'JmnpKyzdCiM', context: '넾다세일 AI 광고제', role: '', description: '', tools: [], links: [] },
+      { id: 'shorts-0DsgG8vvZWU', type: 'youtube', title: '혜택 폭발!! 누리호편', genre: '공모전', orientation: 'portrait',
+        youtubeId: '0DsgG8vvZWU', context: '넾다세일 AI 광고제', role: '', description: '', tools: [], links: [] },
+      // 유튜브
+      { id: 'gyeongseo',   type: 'video', title: '경서동 녹청자 요지', genre: '유튜브', orientation: 'portrait',
+        thumb: 'media/gyeongseo.jpg', preview: 'media/gyeongseo.mp4', context: '', role: '', description: '', tools: [], links: [] },
+      { id: 'gwanghwamun', type: 'video', title: '광화문 변천사', genre: '유튜브', orientation: 'landscape',
+        thumb: 'media/gwanghwamun.jpg', preview: 'media/gwanghwamun.mp4', context: '', role: '', description: '', tools: [], links: [] },
+      { id: 'kimhongdo',   type: 'video', title: '단원 김홍도', genre: '유튜브', orientation: 'landscape',
+        thumb: 'media/kimhongdo.jpg', preview: 'media/kimhongdo.mp4', context: '', role: '', description: '', tools: [], links: [] },
+      { id: 'vlog',        type: 'video', title: '일상 브이로그', genre: '유튜브', orientation: 'portrait',
+        thumb: 'media/vlog.jpg', preview: 'media/vlog.mp4', context: '', role: '', description: '', tools: [], links: [] },
+      // 웹
+      { id: 'golmok',      type: 'web', title: '골목맛집 웹앱', genre: '웹', orientation: 'landscape',
+        thumb: 'media/golmok.jpg', url: 'https://golmok-matzip-app.vercel.app/', context: '',
+        role: '', description: '', tools: ['Next.js', 'Supabase', 'Kakao Map API'], links: [] },
+    ];
+
+    const TODO_TEXT = { role: '담당 역할을 입력해주세요', description: '설명을 입력해주세요', tools: '사용 툴을 입력해주세요' };
+
+    /* ================== 렌더링 로직 (보통 수정할 필요 없음) ================== */
+    const esc = (s) => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const todo = (key, cls = '') => `<span class="todo ${cls}"><i data-lucide="pencil" class="w-3 h-3"></i>${TODO_TEXT[key]}</span>`;
+    const textOrTodo = (v, key) => (v && String(v).trim()) ? esc(v) : todo(key);
+    const ytThumb = (id) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+    const thumbOf = (p) => p.type === 'youtube' ? ytThumb(p.youtubeId) : p.thumb;
+    const CAT_STYLE = { '광고': 'bg-amber-500/15 text-amber-700 dark:text-amber-300', '공모전': 'bg-purple-500/15 text-purple-700 dark:text-purple-300',
+                        '유튜브': 'bg-red-500/15 text-red-700 dark:text-red-300', '웹': 'bg-cyan-500/15 text-cyan-700 dark:text-cyan-300' };
+    const badge = (c) => `<span class="text-[11px] font-bold px-2 py-0.5 rounded-md ${CAT_STYLE[c] || 'bg-slate-500/15 text-slate-600'}">${esc(c)}</span>`;
+    const chip = (t) => `<span class="text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-dark-surface text-slate-700 dark:text-slate-300 font-medium border border-slate-200 dark:border-dark-border">${esc(t)}</span>`;
+
+    function renderServices() {
+      document.getElementById('services-list').innerHTML = SERVICES.map((s, i) => `
+        <article class="service-card group relative rounded-3xl p-6 sm:p-7 bg-white/80 dark:bg-dark-card/70 backdrop-blur-md border border-slate-200/80 dark:border-dark-border hover:border-brand-gold/60 transition-colors flex flex-col">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-emerald/20 to-brand-gold/25 text-brand-gold flex items-center justify-center group-hover:scale-110 transition-transform">
+              <i data-lucide="${s.icon}" class="w-6 h-6"></i>
+            </div>
+            <span class="font-display text-sm font-black text-slate-300 dark:text-slate-700">0${i + 1}</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">${esc(s.title)}</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5">${esc(s.desc)}</p>
+          <div class="flex flex-wrap gap-1.5 mb-6">${s.tags.map(chip).join('')}</div>
+          <a href="#contact" data-service="${esc(s.title)}" class="service-inquiry mt-auto inline-flex items-center justify-between pt-4 border-t border-slate-200/70 dark:border-dark-border/70 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-brand-gold">
+            <span>가격 문의</span><i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </a>
+        </article>`).join('');
+      document.querySelectorAll('.service-inquiry').forEach(a => a.addEventListener('click', () => {
+        document.getElementById('f-service').value = a.dataset.service;
+      }));
+    }
+
+    function renderProcess() {
+      document.getElementById('process-list').innerHTML = PROCESS.map((p, i) => `
+        <li class="process-item relative flex flex-col items-center text-center rounded-3xl p-6 bg-white/70 dark:bg-dark-card/60 border border-slate-200/80 dark:border-dark-border lg:bg-transparent lg:dark:bg-transparent lg:border-0 lg:p-2">
+          <div class="process-node relative z-10 w-16 h-16 rounded-2xl bg-white dark:bg-dark-card border-2 ${i % 2 ? 'border-brand-gold/60 text-brand-gold' : 'border-brand-emerald/60 text-brand-emerald'} flex items-center justify-center shadow-md mb-5 lg:mt-3">
+            <i data-lucide="${p.icon}" class="w-7 h-7"></i>
+          </div>
+          <span class="font-display text-xs font-black tracking-widest text-brand-gold mb-1">STEP 0${i + 1}</span>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">${esc(p.step)}</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-[16rem]">${esc(p.desc)}</p>
+        </li>`).join('');
+    }
+
+    const SOCIAL_SVG = {
+      youtube: '<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>',
+      instagram: '<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>',
+      github: '<path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>',
+    };
+
+    function renderContact() {
+      document.getElementById('email-text').textContent = PROFILE.email;
+      document.getElementById('email-link').href = 'mailto:' + PROFILE.email;
+      const sel = document.getElementById('f-service');
+      sel.innerHTML = ['선택해주세요', ...SERVICES.map(s => s.title), '기타'].map((t, i) => `<option value="${i ? esc(t) : ''}">${esc(t)}</option>`).join('');
+      document.getElementById('social-icons-group').innerHTML = SOCIALS.map(s => {
+        const svg = `<svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">${SOCIAL_SVG[s.icon] || ''}</svg>`;
+        const cls = 'social-btn w-13 h-13 p-3.5 rounded-2xl border bg-white dark:bg-dark-surface flex items-center justify-center transition-all shadow-sm';
+        return s.url
+          ? `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(s.name)}" class="${cls} border-slate-200 dark:border-dark-border text-slate-600 dark:text-slate-300 hover:text-brand-gold hover:border-brand-gold/50">${svg}</a>`
+          : `<span title="${esc(s.name)} 주소를 입력해주세요" aria-label="${esc(s.name)} (주소 미입력)" class="${cls} border-dashed border-amber-500/60 text-slate-400 opacity-60 cursor-not-allowed">${svg}</span>`;
+      }).join('');
+    }
+
+    // ---- 작업물 그리드 ----
+    let activeFilter = '전체';
+    const grid = document.getElementById('works-grid');
+
+    function cardHTML(p) {
+      const thumb = esc(thumbOf(p));
+      const portrait = p.orientation === 'portrait';
+      const video = p.type === 'video' ? `<video muted loop playsinline preload="none" data-src="${esc(p.preview)}" aria-hidden="true"></video>` : '';
+      const icon = p.type === 'web' ? 'globe' : 'play';
+      const sub = p.context ? esc(p.context) : (p.type === 'youtube' ? 'YouTube Shorts' : (p.type === 'web' ? '웹앱' : ''));
+      return `
+      <div class="portfolio-card-wrap" data-id="${esc(p.id)}">
+        <article class="work-card group relative h-full rounded-2xl overflow-hidden bg-white dark:bg-dark-card border border-slate-200/80 dark:border-dark-border hover:border-brand-gold/50 cursor-pointer"
+                 tabindex="0" role="button" aria-label="${esc(p.title)} 자세히 보기">
+          <div class="work-media ${portrait ? 'portrait' : ''}">
+            ${portrait ? `<img class="media-bg" src="${thumb}" alt="" aria-hidden="true" loading="lazy">` : ''}
+            <div class="media-frame">
+              <img src="${thumb}" alt="${esc(p.title)} 썸네일" loading="lazy" ${p.type === 'web' ? 'style="object-position: top"' : ''}>
+              ${video}
+            </div>
+            <div class="play-badge absolute bottom-3 right-3 w-9 h-9 rounded-full bg-black/55 backdrop-blur text-white flex items-center justify-center pointer-events-none">
+              <i data-lucide="${icon}" class="w-4 h-4"></i>
+            </div>
+          </div>
+          <div class="px-5 py-4">
+            <h4 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-brand-gold transition-colors">${esc(p.title)}</h4>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 min-h-[1rem]">${sub}</p>
+          </div>
+        </article>
+      </div>`;
+    }
+
+    const gridWrap = (items) => `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">${items.map(cardHTML).join('')}</div>`;
+
+    function renderFilters() {
+      document.getElementById('filter-tabs').innerHTML = FILTERS.map(f => {
+        const n = f === '전체' ? PROJECTS.length : PROJECTS.filter(p => p.genre === f).length;
+        return `<button role="tab" data-filter="${esc(f)}" aria-selected="${f === activeFilter}" class="filter-btn ${f === activeFilter ? 'active' : ''} px-4 py-2 rounded-xl text-sm font-semibold border border-slate-300 dark:border-dark-border bg-white/70 dark:bg-dark-card/70 text-slate-700 dark:text-slate-300 hover:border-brand-gold transition-colors">${esc(f)} <span class="opacity-60 text-xs">${n}</span></button>`;
+      }).join('');
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.addEventListener('click', () => {
+        activeFilter = btn.dataset.filter;
+        renderFilters();
+        renderWorks(true);
+      }));
+    }
+
+    function renderWorks(animate) {
+      const genres = activeFilter === '전체' ? GENRES : [activeFilter];
+      const groups = genres.map(g => [g, PROJECTS.filter(p => p.genre === g)]).filter(([, items]) => items.length);
+      grid.innerHTML = groups.map(([g, items]) => activeFilter === '전체'
+        ? `<div class="genre-group">
+             <div class="flex items-baseline gap-3 mb-6 pb-3 border-b border-slate-200/70 dark:border-dark-border/70">
+               <h3 class="text-lg font-bold text-slate-900 dark:text-white">${esc(g)}</h3>
+               <span class="text-xs text-slate-400">${items.length}</span>
+             </div>
+             ${gridWrap(items)}
+           </div>`
+        : gridWrap(items)).join('');
+      document.getElementById('works-empty').classList.toggle('hidden', groups.length > 0);
+      lucide.createIcons();
+      bindCards();
+      if (animate && window.gsap) {
+        gsap.fromTo('#works-grid .portfolio-card-wrap', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, stagger: 0.04, ease: 'power2.out' });
+      }
+      if (window.ScrollTrigger) ScrollTrigger.refresh();
+    }
+
+    // 미리보기 재생 / 정지
+    function startPreview(card) {
+      const v = card.querySelector('video');
+      if (!v) return;
+      if (!v.src) v.src = v.dataset.src;
+      card.classList.add('is-previewing');
+      const pr = v.play();
+      if (pr && pr.catch) pr.catch(() => {});
+    }
+    function stopPreview(card) {
+      const v = card.querySelector('video');
+      if (!v) return;
+      card.classList.remove('is-previewing');
+      v.pause();
+      try { v.currentTime = 0; } catch (e) {}
+    }
+
+    const isTouch = window.matchMedia('(pointer: coarse)').matches;
+    let touchObserver = null;
+    if (isTouch && 'IntersectionObserver' in window) {
+      // 터치 기기: 화면 중앙에 들어온 카드만 자동 미리보기
+      touchObserver = new IntersectionObserver((entries) => {
+        entries.forEach(en => en.isIntersecting ? startPreview(en.target) : stopPreview(en.target));
+      }, { threshold: 0.75 });
+    }
+
+    function bindCards() {
+      grid.querySelectorAll('.portfolio-card-wrap').forEach(wrap => {
+        const card = wrap.querySelector('.work-card');
+        const p = PROJECTS.find(x => x.id === wrap.dataset.id);
+        card.addEventListener('click', () => openModal(p));
+        card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(p); } });
+        if (p.type === 'video') {
+          if (touchObserver) {
+            touchObserver.observe(card);
+          } else {
+            card.addEventListener('mouseenter', () => startPreview(card));
+            card.addEventListener('mouseleave', () => stopPreview(card));
+          }
+        }
+      });
+    }
+
+    // ---- 모달 ----
+    const modal = document.getElementById('project-modal');
+    const modalContent = document.getElementById('modal-content');
+    const modalLayout = document.getElementById('modal-layout');
+    const modalMedia = document.getElementById('modal-media');
+    let lastFocused = null;
+
+    function openModal(p) {
+      lastFocused = document.activeElement;
+      grid.querySelectorAll('.work-card').forEach(stopPreview);
+      const portrait = p.orientation === 'portrait';
+      modalContent.className = modalContent.className.replace(/max-w-\S+/g, '').trim() + (portrait ? ' max-w-4xl' : ' max-w-4xl');
+      modalLayout.className = portrait ? 'md:grid md:grid-cols-[minmax(0,22rem)_1fr]' : '';
+      modalMedia.className = 'bg-black flex items-center justify-center ' + (portrait ? 'md:rounded-l-3xl rounded-t-3xl md:rounded-tr-none overflow-hidden' : 'rounded-t-3xl overflow-hidden');
+
+      if (p.type === 'video') {
+        modalMedia.innerHTML = `<video src="${esc(p.preview)}" poster="${esc(p.thumb)}" controls autoplay loop playsinline class="w-full ${portrait ? 'max-h-[70vh] md:max-h-[86vh] aspect-[9/16] object-contain' : 'aspect-video'}"></video>`;
+        const v = modalMedia.querySelector('video');
+        const pr = v.play(); if (pr && pr.catch) pr.catch(() => {});
+      } else if (p.type === 'youtube') {
+        modalMedia.innerHTML = `<div class="w-full ${portrait ? 'max-w-[22rem] aspect-[9/16] max-h-[86vh]' : 'aspect-video'} mx-auto"><iframe class="w-full h-full" src="https://www.youtube.com/embed/${esc(p.youtubeId)}?autoplay=1&rel=0&playsinline=1" title="${esc(p.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`;
+      } else {
+        modalMedia.innerHTML = `<img src="${esc(p.thumb)}" alt="${esc(p.title)} 화면" class="w-full max-h-[70vh] md:max-h-[86vh] object-contain bg-white">`;
+      }
+
+      document.getElementById('modal-badges').innerHTML = badge(p.genre);
+      document.getElementById('modal-title').textContent = p.title;
+      const ctx = document.getElementById('modal-context');
+      ctx.textContent = p.context || ''; ctx.classList.toggle('hidden', !p.context);
+      document.getElementById('modal-role').innerHTML = textOrTodo(p.role, 'role');
+      document.getElementById('modal-desc').innerHTML = textOrTodo(p.description, 'description');
+      document.getElementById('modal-tools').innerHTML = p.tools.length ? p.tools.map(chip).join('') : todo('tools');
+
+      const links = [...(p.links || [])];
+      if (p.type === 'web') links.unshift({ label: '사이트 열기', url: p.url });
+      if (p.type === 'youtube') links.unshift({ label: 'YouTube에서 보기', url: `https://www.youtube.com/shorts/${p.youtubeId}` });
+      document.getElementById('modal-links').innerHTML = links.map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-900 text-white dark:bg-brand-gold dark:text-slate-950 font-bold text-xs hover:opacity-90">${esc(l.label)} <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></a>`).join('');
+      lucide.createIcons();
+
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+      modalContent.classList.remove('scale-95');
+      modalContent.classList.add('scale-100');
+      modalContent.scrollTop = 0;
+      document.body.style.overflow = 'hidden';
+      modal.querySelector('button[aria-label="닫기"]').focus();
+    }
+
+    function closeModal() {
+      if (modal.classList.contains('pointer-events-none')) return;
+      modal.classList.remove('opacity-100');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+      const v = modalMedia.querySelector('video'); if (v) v.pause();
+      setTimeout(() => { if (modal.classList.contains('pointer-events-none')) modalMedia.innerHTML = ''; }, 300);
+      document.body.style.overflow = '';
+      if (lastFocused) lastFocused.focus();
+    }
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    // ---- 문의 폼 → mailto (백엔드 없음) ----
+    function bindInquiryForm() {
+      const form = document.getElementById('inquiry-form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const f = (id) => document.getElementById(id);
+        const name = f('f-name').value.trim(), contact = f('f-contact').value.trim();
+        const service = f('f-service').value || '미선택', message = f('f-message').value.trim();
+        let ok = true;
+        [['f-name', name], ['f-contact', contact], ['f-message', message]].forEach(([id, v]) => {
+          f(id).classList.toggle('invalid', !v); if (!v) ok = false;
+        });
+        if (!ok) { showToast('이름, 연락처, 문의 내용을 입력해주세요.'); form.querySelector('.invalid').focus(); return; }
+        const subject = `[${PROFILE.brandKo} 문의] ${service} - ${name}`;
+        const body = `이름/회사명: ${name}\n연락처: ${contact}\n서비스: ${service}\n\n문의 내용:\n${message}\n`;
+        window.location.href = `mailto:${PROFILE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        showToast('메일 앱을 여는 중입니다. 열리지 않으면 이메일 주소로 직접 보내주세요.');
+      });
+      form.querySelectorAll('.field').forEach(el => el.addEventListener('input', () => el.classList.remove('invalid')));
+    }
+
+    // ---- 초기 렌더링 ----
+    renderServices();
+    renderProcess();
+    renderContact();
+    bindInquiryForm();
+    renderFilters();
+    renderWorks(false);
+
+    lucide.createIcons();
     gsap.registerPlugin(ScrollTrigger);
 
     // 2. Theme Toggle (Light / Dark)
@@ -980,7 +895,7 @@
 
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    if (savedTheme !== 'light') { // 기본값: 다크
       setTheme(true);
     } else {
       setTheme(false);
@@ -1057,7 +972,7 @@
 
     // 5. Toast Notification & Copy Email
     function copyEmail() {
-      const email = 'gj3130@gmail.com';
+      const email = PROFILE.email;
       navigator.clipboard.writeText(email).then(() => {
         showToast('이메일 주소 (' + email + ')가 복사되었습니다!');
       }).catch(() => {
@@ -1078,74 +993,6 @@
         toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
       }, 3000);
     }
-
-    // 6. Portfolio Detail Modal
-    const modal = document.getElementById('project-modal');
-    const modalContent = document.getElementById('modal-content');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDesc = document.getElementById('modal-desc');
-    const modalTags = document.getElementById('modal-tags');
-
-    function openModal(title, desc, tags) {
-      modalTitle.textContent = title;
-      modalDesc.textContent = desc;
-      
-      modalTags.innerHTML = '';
-      tags.forEach(tag => {
-        const span = document.createElement('span');
-        span.className = 'text-xs px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-dark-surface text-slate-700 dark:text-slate-300 font-medium border border-slate-200 dark:border-dark-border';
-        span.textContent = tag;
-        modalTags.appendChild(span);
-      });
-
-      modal.classList.remove('opacity-0', 'pointer-events-none');
-      modal.classList.add('opacity-100');
-      modalContent.classList.remove('scale-95');
-      modalContent.classList.add('scale-100');
-    }
-
-    function closeModal() {
-      modal.classList.remove('opacity-100');
-      modal.classList.add('opacity-0', 'pointer-events-none');
-      modalContent.classList.remove('scale-100');
-      modalContent.classList.add('scale-95');
-    }
-
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
-    });
-
-    // 7. 3D Tilt Effect & Dynamic Cursor Sheen for Portfolio Cards
-    const tiltCards = document.querySelectorAll('.tilt-card');
-
-    tiltCards.forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = ((y - centerY) / centerY) * -10;
-        const rotateY = ((x - centerX) / centerX) * 10;
-        
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-        
-        const percentX = (x / rect.width) * 100;
-        const percentY = (y / rect.height) * 100;
-        card.style.setProperty('--mouse-x', `${percentX}%`);
-        card.style.setProperty('--mouse-y', `${percentY}%`);
-      });
-
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-      });
-    });
 
     // 8. Interactive Ecosystem Canvas
     const canvas = document.getElementById('ecosystem-canvas');
@@ -1326,11 +1173,7 @@
     initParticles();
     animate();
 
-    // ==============================================================
-    // 9. GSAP ScrollTrigger & Multi-Layer Parallax Architecture
-    // ==============================================================
     window.addEventListener('DOMContentLoaded', () => {
-      
       // A. Hero Section Intro Animation (Page Load)
       const heroTimeline = gsap.timeline({ defaults: { ease: "power3.out" } });
 
@@ -1439,198 +1282,17 @@
           ease: 'none'
         }, 0);
 
-      // D. Profile Section Parallax & Stagger Entrances
-      gsap.from('.profile-left', {
-        scrollTrigger: {
-          trigger: '#profile',
-          start: 'top 80%',
-          toggleActions: 'play none none reverse'
-        },
-        x: -50,
-        opacity: 0,
-        duration: 0.9,
-        ease: 'power3.out'
+      gsap.from('.services-header', { scrollTrigger: { trigger: '#services', start: 'top 80%', toggleActions: 'play none none reverse' }, y: 40, opacity: 0, duration: 0.8, ease: 'power3.out' });
+      gsap.from('.service-card', { scrollTrigger: { trigger: '#services-list', start: 'top 85%', toggleActions: 'play none none reverse' }, y: 40, opacity: 0, stagger: 0.1, duration: 0.7, ease: 'power3.out' });
+      gsap.from('.process-header', { scrollTrigger: { trigger: '#process', start: 'top 80%', toggleActions: 'play none none reverse' }, y: 40, opacity: 0, duration: 0.8, ease: 'power3.out' });
+      gsap.to('#process-line', { scrollTrigger: { trigger: '#process-list', start: 'top 75%', end: 'bottom 60%', scrub: 0.5 }, width: '75%', ease: 'none' });
+      document.querySelectorAll('.process-item').forEach((item, i) => {
+        gsap.timeline({ scrollTrigger: { trigger: item, start: 'top 85%', toggleActions: 'play none none reverse' } })
+          .from(item.querySelector('.process-node'), { scale: 0, rotate: -90, opacity: 0, duration: 0.6, delay: i * 0.08, ease: 'back.out(2)' })
+          .from(item.querySelectorAll('span, h3, p'), { y: 20, opacity: 0, stagger: 0.05, duration: 0.5, ease: 'power3.out' }, '-=0.3');
       });
-
-      gsap.to('.profile-left', {
-        scrollTrigger: {
-          trigger: '#profile',
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1
-        },
-        y: -40,
-        ease: 'none'
-      });
-
-      gsap.to('.profile-right', {
-        scrollTrigger: {
-          trigger: '#profile',
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1.5
-        },
-        y: 30,
-        ease: 'none'
-      });
-
-      gsap.from('.metric-card', {
-        scrollTrigger: {
-          trigger: '.profile-left',
-          start: 'top 65%',
-          toggleActions: 'play none none reverse'
-        },
-        scale: 0.85,
-        opacity: 0,
-        stagger: 0.15,
-        duration: 0.7,
-        ease: 'back.out(1.7)'
-      });
-
-      gsap.from('.profile-right', {
-        scrollTrigger: {
-          trigger: '#profile',
-          start: 'top 80%',
-          toggleActions: 'play none none reverse'
-        },
-        x: 50,
-        opacity: 0,
-        duration: 0.9,
-        ease: 'power3.out'
-      });
-
-      gsap.from('.skill-chip', {
-        scrollTrigger: {
-          trigger: '.profile-right',
-          start: 'top 70%',
-          toggleActions: 'play none none reverse'
-        },
-        scale: 0.7,
-        opacity: 0,
-        stagger: 0.04,
-        duration: 0.5,
-        ease: 'back.out(2)'
-      });
-
-      // E. Journey / Timeline Section ScrollTrigger
-      gsap.from('.journey-header', {
-        scrollTrigger: {
-          trigger: '#journey',
-          start: 'top 80%',
-          toggleActions: 'play none none reverse'
-        },
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out'
-      });
-
-      gsap.to('#timeline-progress-line', {
-        scrollTrigger: {
-          trigger: '#timeline-container',
-          start: 'top 70%',
-          end: 'bottom 70%',
-          scrub: 0.5
-        },
-        height: '100%',
-        ease: 'none'
-      });
-
-      document.querySelectorAll('.timeline-item').forEach((item) => {
-        const text = item.querySelector('.timeline-text');
-        const node = item.querySelector('.timeline-node');
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 75%',
-            toggleActions: 'play none none reverse'
-          }
-        });
-
-        tl.from(node, {
-          scale: 0,
-          rotate: -90,
-          opacity: 0,
-          duration: 0.6,
-          ease: 'back.out(2)'
-        })
-        .from(text, {
-          y: 35,
-          opacity: 0,
-          duration: 0.7,
-          ease: 'power3.out'
-        }, "-=0.3");
-      });
-
-      // F. Portfolio Section Multi-Speed Parallax Stagger
-      gsap.from('.portfolio-header', {
-        scrollTrigger: {
-          trigger: '#portfolio',
-          start: 'top 80%',
-          toggleActions: 'play none none reverse'
-        },
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out'
-      });
-
-      gsap.from('.portfolio-card-wrap', {
-        scrollTrigger: {
-          trigger: '.portfolio-grid',
-          start: 'top 75%',
-          toggleActions: 'play none none reverse'
-        },
-        y: 70,
-        scale: 0.92,
-        opacity: 0,
-        stagger: 0.18,
-        duration: 0.85,
-        ease: 'power3.out'
-      });
-
-      document.querySelectorAll('.portfolio-card-wrap').forEach((card) => {
-        const speed = parseFloat(card.getAttribute('data-parallax-speed')) || 0;
-        gsap.to(card, {
-          scrollTrigger: {
-            trigger: '#portfolio',
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1.2
-          },
-          y: speed,
-          ease: 'none'
-        });
-      });
-
-      // G. Contact Section ScrollTrigger
-      gsap.from('#contact-card', {
-        scrollTrigger: {
-          trigger: '#contact',
-          start: 'top 75%',
-          toggleActions: 'play none none reverse'
-        },
-        y: 60,
-        scale: 0.95,
-        opacity: 0,
-        duration: 0.9,
-        ease: 'power3.out'
-      });
-
-      gsap.from('.social-btn', {
-        scrollTrigger: {
-          trigger: '#social-icons-group',
-          start: 'top 85%',
-          toggleActions: 'play none none reverse'
-        },
-        scale: 0,
-        opacity: 0,
-        stagger: 0.1,
-        duration: 0.6,
-        ease: 'back.out(2.5)'
-      });
-
+      gsap.from('.portfolio-header', { scrollTrigger: { trigger: '#works', start: 'top 80%', toggleActions: 'play none none reverse' }, y: 40, opacity: 0, duration: 0.8, ease: 'power3.out' });
+      gsap.from('#contact-card', { scrollTrigger: { trigger: '#contact', start: 'top 80%', toggleActions: 'play none none reverse' }, y: 60, scale: 0.95, opacity: 0, duration: 0.9, ease: 'power3.out' });
       ScrollTrigger.refresh();
     });
   </script>
